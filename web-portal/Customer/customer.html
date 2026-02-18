@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VitaMed – Pharmacy Dashboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+<link rel="stylesheet" href="../assets/css/customer.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <img src="../assets/images/logo_vitamed.png" class="sidebar-logo">
+    <div class="brand-text">
+      <span class="brand-name">VitaMed</span>
+      <span class="brand-sub">Pharmacy Portal</span>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="customer.html" class="nav-item active"><span class="nav-dot"></span>Dashboard</a>
+    <a href="order.html" class="nav-item"><span class="nav-dot"></span>Place Order</a>
+    <a href="pricelist.html" class="nav-item"><span class="nav-dot"></span>Price List</a>
+    <a href="records.html" class="nav-item"><span class="nav-dot"></span>My Records</a>
+    <a href="returns.html" class="nav-item"><span class="nav-dot"></span>Return Requests</a>
+    <a href="settings.html" class="nav-item"><span class="nav-dot"></span>Settings</a>
+  </nav>
+
+  <button class="sidebar-logout" id="logoutSidebar">Logout</button>
+
+  <div class="sidebar-footer">
+    <p>© VitaMed</p>
+    <p class="muted">Professional Healthcare Platform</p>
+  </div>
+</aside>
+
+<!-- NOTIFICATIONS -->
+<div class="notif-wrapper">
+  <button id="notifBtn" class="notif-bell">
+      🔔 <span id="notifBadge" class="notif-badge">0</span>
+  </button>
+
+  <div id="notifDropdown" class="notif-dropdown glass">
+      <div class="notif-header">
+          <span>Notifications</span>
+          <small id="notifCount">0</small>
+      </div>
+      <div id="notifList" class="notif-list"></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div>
+    <p class="subtitle">Welcome back,</p>
+    <h1 class="title">Dr. <span id="username">Pharmacy</span></h1>
+    <p class="hint">Your smart ordering system</p>
+  </div>
+
+  <div class="profile-pill">
+    <div class="avatar" id="avatarInitial">P</div>
+    <div class="profile-text">
+      <span id="profileName">Pharmacy</span>
+      <span class="profile-role">Verified Account</span>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-panel">
+  <div class="hero-text">
+    <h2>Smart Pharmacy Solutions</h2>
+    <p>Order faster, track returns, and manage your data securely.</p>
+  </div>
+
+  <!-- ✅ UPDATED STATS -->
+  <div class="hero-stats">
+
+    <div class="stat">
+      <span class="stat-label">Total invoices</span>
+      <span class="stat-value" id="totalInvoices">0</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-label">Active orders</span>
+      <span class="stat-value" id="activeOrders">0</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-label">Completed</span>
+      <span class="stat-value" id="completedOrders">0</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-label">Returns</span>
+      <span class="stat-value" id="pendingReturns">0</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-label">This Month</span>
+      <span class="stat-value" id="monthlyVolume">$0</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section">
+  <div>
+    <h2>About VitaMed</h2>
+    <p>VitaMed is a digital healthcare supply platform connecting pharmacies with pharmaceutical warehouses efficiently.</p>
+    <ul class="about-features">
+      <li>✔ Smart ordering</li>
+      <li>✔ Secure system</li>
+      <li>✔ Real-time stock tracking</li>
+      <li>✔ Reliable invoices</li>
+    </ul>
+  </div>
+  <img src="../assets/images/pharmcy.jpg" class="about-image">
+</section>
+
+<!-- WHY -->
+<section class="why-section">
+  <h2>Why Choose VitaMed</h2>
+  <div class="why-grid">
+
+    <div class="why-card analytics-card">
+      <div>🚀 Fast delivery</div>
+      <img src="../assets/images/delivery.png" class="analytics-img">
+    </div>
+
+    <div class="why-card analytics-card">
+      <div>🔒 Secure system</div>
+      <img src="../assets/images/vitamed1.png" class="analytics-img">
+    </div>
+
+    <div class="why-card analytics-card">
+      <div>📊 Smart analytics</div>
+      <img src="../assets/images/pharmacy2.jpg.png" class="analytics-img">
+    </div>
+
+    <div class="why-card">💼 Professional support</div>
+  </div>
+</section>
+
+</main>
+</div>
+
+<script type="module" src="../assets/js/guard_customer.js"></script>
+<script type="module" src="../assets/js/dashboard.js"></script>
+</body>
+</html>

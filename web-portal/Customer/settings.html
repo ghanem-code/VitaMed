@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings – VitaMed</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ❌ لا تغيّر -->
+    <link rel="stylesheet" href="../assets/css/customer.css">
+    <!-- ✅ بس هذا -->
+    <link rel="stylesheet" href="../assets/css/settings.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR (كما هو) -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/images/logo_vitamed.png" class="sidebar-logo">
+            <div class="brand-text">
+                <span class="brand-name">VitaMed</span>
+                <span class="brand-sub">Pharmacy Portal</span>
+            </div>
+        </div>
+
+      <nav class="sidebar-nav">
+
+  <a href="customer.html" class="nav-item">
+    <span class="nav-dot"></span>
+    Dashboard
+  </a>
+
+  <a href="order.html" class="nav-item">
+    <span class="nav-dot"></span>
+    Place Order
+  </a>
+
+  <a href="pricelist.html" class="nav-item">
+    <span class="nav-dot"></span>
+    Price List
+  </a>
+
+  <a href="records.html" class="nav-item">
+    <span class="nav-dot"></span>
+    My Records
+  </a>
+
+  <a href="returns.html" class="nav-item">
+    <span class="nav-dot"></span>
+    Return Requests
+  </a>
+
+  <a href="settings.html" class="nav-item active">
+    <span class="nav-dot"></span>
+    Settings
+  </a>
+
+</nav>
+
+
+        <button class="sidebar-logout" id="logoutSidebar">Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <h1 class="title">Settings</h1>
+        <p class="subtitle">Manage your profile, security, and feedback.</p>
+
+        <!-- PROFILE -->
+        <div class="settings-card">
+            <h2>Profile Information</h2>
+
+            <div class="input-group">
+                <label>Username</label>
+                <input id="username_input" type="text">
+            </div>
+
+            <div class="input-group">
+                <label>Phone</label>
+                <input id="phone_input" type="text">
+            </div>
+
+            <div class="input-group">
+                <label>Pharmacy Name</label>
+                <input id="pharmacy_input" type="text">
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input id="email_input" type="text" disabled>
+            </div>
+            <div class="input-group">
+    <label>Location</label>
+    <input id="location_input" type="text" placeholder="City – Area">
+</div>
+
+
+            <button class="save-btn" onclick="saveProfile()">Save Changes</button>
+        </div>
+
+        <!-- PASSWORD -->
+        <div class="settings-card">
+            <h2>Change Password</h2>
+
+            <div class="input-group">
+                <label>Current Password</label>
+                <input id="old_pass" type="password">
+            </div>
+
+            <div class="input-group">
+                <label>New Password</label>
+                <input id="new_pass" type="password">
+            </div>
+
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input id="confirm_pass" type="password">
+            </div>
+
+            <button class="save-btn" onclick="changePassword()">Update Password</button>
+        </div>
+
+        <!-- FEEDBACK -->
+        <div class="settings-card">
+            <h2>Send Feedback</h2>
+
+            <div class="input-group">
+                <label>Message</label>
+                <textarea id="feedback_message" rows="4"></textarea>
+            </div>
+
+            <label>Rating</label>
+            <div class="star-rating" id="starRating">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+            </div>
+
+            <button class="save-btn" onclick="sendFeedback()">Send Feedback</button>
+        </div>
+
+        <!-- DELETE -->
+        <div class="settings-card danger">
+            <h2>Delete Account</h2>
+            <p class="danger-text">
+                This will permanently delete your account and all related data.
+            </p>
+            <button class="delete-btn" onclick="deleteAccount()">Delete My Account</button>
+        </div>
+
+    </main>
+</div>
+<script type="module" src="../assets/js/guard_customer.js"></script>
+<script type="module" src="../assets/js/settings.js"></script>
+
+<script>
+document.getElementById("logoutSidebar").onclick = () => {
+    localStorage.clear();
+    window.location.href = "../login.html";
+};
+</script>
+
+</body>
+</html>

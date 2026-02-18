@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pharmacy">
+
+    <!-- Header: Welcome + Logo بالنص -->
+    <!-- Header: Welcome + (VitaMed + logo) بالنص -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="48dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Welcome -->
+        <TextView
+            android:id="@+id/tvWelcomeTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to"
+            android:textSize="18sp"
+            android:textColor="#7A8A8F"
+            android:fontFamily="sans-serif-medium"/>
+
+        <!-- سطر: VitaMed + Logo مصغّر ومتناسب -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:id="@+id/tvBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VitaMed"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#1F2B33"
+                android:fontFamily="sans-serif-medium"/>
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/logo_vitamed"
+            android:contentDescription="@string/app_name"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Form -->
+    <LinearLayout
+        android:id="@+id/form"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Username -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textColor="#738186"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="6dp"/>
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:hint="username"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:textColor="#212121"
+            android:textColorHint="#80212121"
+            android:fontFamily="sans-serif"
+            android:background="@drawable/et_bg_selector"
+            android:inputType="textEmailAddress" />
+
+        <!-- Password -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="password"
+            android:textColor="#738186"
+            android:fontFamily="sans-serif-medium"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="6dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="********"
+                android:inputType="textPassword"
+                android:background="@drawable/et_bg_selector"
+                android:padding="12dp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Forgot password? (يمين) -->
+        <!-- Forgot password? (يمين) -->
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot password?"
+            android:textColor="#000000"
+            android:textSize="14sp"
+             android:fontFamily="sans-serif-medium"
+             android:paddingTop="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_gravity="end"/>
+
+
+        <!-- Login Button -->
+        <!-- Login Button -->
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="25dp"
+            android:minWidth="0dp"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"
+
+            android:background="@drawable/btn_login_selector"
+            android:backgroundTint="#0097A7"
+            app:backgroundTint="#0097A7"
+        />
+
+    </LinearLayout>
+
+    <!-- Footer: لا تملك حساب + رابط Request Account -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvNoAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Don’t have an account yet?"
+            android:textColor="#9AA7AC"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"/>
+
+        <!-- Footer: Request Account -->
+        <TextView
+            android:id="@+id/tvRequestAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request Account"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            android:paddingTop="4dp"
+            android:clickable="true"
+            android:focusable="true"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

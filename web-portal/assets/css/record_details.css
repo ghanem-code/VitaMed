@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    background: #eef3f7;
+    font-family: "Inter", sans-serif;
+}
+
+.layout { display: flex; }
+
+/* ---- SIDEBAR (نفس تصميمك السابق) ---- */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: linear-gradient(180deg, #064b5c, #041c25);
+    color: #e3f3f7;
+    padding: 20px 18px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-brand { display: flex; align-items: center; margin-bottom: 25px; }
+.sidebar-logo { height: 40px; width: 40px; margin-right: 10px; }
+.sidebar-nav { flex: 1; margin-top: 10px; }
+.nav-item {
+    display: block;
+    color: #d6e8ee;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.nav-item:hover { background: rgba(255,255,255,0.08); }
+.nav-item.active { background: #00bcd4; color: white; }
+.sidebar-logout {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+.sidebar-footer { margin-top: 15px; opacity: .7; }
+
+/* ---- MAIN ---- */
+.main {
+    flex: 1;
+    padding: 35px;
+}
+
+.title { margin: 0; font-size: 28px; font-weight: 600; }
+.subtitle { margin-top: 5px; color: #6c7b82; }
+
+/* ---- INVOICE BOX ---- */
+.inv-box {
+    margin-top: 25px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.inv-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 15px;
+}
+
+.inv-header h2 { margin: 0; }
+.date { color: #6c7b82; margin-top: 3px; }
+
+.total-box { text-align: right; }
+.total-box span { font-size: 13px; color: #555; }
+
+/* ---- ITEMS ---- */
+.items-list { margin-top: 20px; }
+
+.item {
+    padding: 14px 0;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-name { font-weight: 600; }
+.item-qty { color: #6c7b82; }
+.item-price { font-weight: 600; color: #1693D1; }

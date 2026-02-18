@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VitaMed – Admin Chat</title>
+  <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <link rel="stylesheet" href="../assets/css/chat.css">
+  
+</head>
+<body>
+
+<!-- ☰ MENU BUTTON (MOBILE) -->
+<button id="menuBtn" class="menu-btn">☰</button>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/images/logo_vitamed.png" class="logo-img">
+      <div>
+        <div class="brand-name">VitaMed</div>
+        <div class="brand-sub">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="admin.html">Dashboard</a>
+      <a href="manage_products.html">Manage Products</a>
+      <a href="admin_pharmacies.html">Pharmacies</a>
+      <a href="admin_invoices.html">Invoices</a>
+      <a href="admin_feedback.html">Feedback</a>
+      <a href="admin_chat.html">Chat</a>
+    </nav>
+
+    <button id="logoutSidebar" class="logout">Logout</button>
+  </aside>
+
+  <!-- CHAT -->
+  <main class="main chat-layout">
+
+    <!-- ROOMS -->
+    <div class="chat-rooms">
+      <div class="rooms-header">Pharmacies</div>
+      <div id="rooms" class="rooms-list"></div>
+    </div>
+
+    <!-- MESSAGES -->
+    <div class="chat-box">
+      <div class="chat-header" id="chatHeader">
+        Select a pharmacy
+      </div>
+
+      <div class="chat-messages" id="messages"></div>
+
+      <div class="chat-input">
+        <input id="msgInput" placeholder="Type your message..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script type="module" src="../assets/js/admin_guard.js"></script>
+
+<!-- CHAT LOGIC -->
+<script type="module" src="../assets/js/admin_chat.js"></script>
+
+<!-- SIDEBAR ACTIVE + TOGGLE -->
+<script>
+  const currentPage = location.pathname.split("/").pop();
+  document.querySelectorAll(".sidebar-nav a").forEach(link => {
+    if (link.getAttribute("href") === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  const menuBtn = document.getElementById("menuBtn");
+  const sidebar = document.querySelector(".sidebar");
+  const logoutSidebar = document.getElementById("logoutSidebar");
+
+  /* ===== TOGGLE SIDEBAR MOBILE ===== */
+  menuBtn.addEventListener("click", () => {
+    sidebar.classList.toggle("open");
+  });
+
+  document.querySelectorAll(".sidebar-nav a, #logoutSidebar").forEach(link => {
+    link.addEventListener("click", () => sidebar.classList.remove("open"));
+  });
+
+  /* ===== LOGOUT ===== */
+  logoutSidebar.onclick = () => {
+    try {
+      import("../assets/js/firebase.js").then(({ auth }) => auth.signOut());
+    } catch(e){}
+    window.location.href = "../login.html";
+  };
+</script>
+
+</body>
+</html>

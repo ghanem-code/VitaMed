@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VitaMed – Pharmacies</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+<link rel="stylesheet" href="../assets/css/admin_pharmacies.css">
+
+</head>
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <div class="sidebar-brand">
+    <!-- ✅ LOGO IMAGE -->
+    <img src="../assets/images/logo_vitamed.png" class="logo-img">
+    <div>
+      <div class="brand-name">VitaMed</div>
+      <div class="brand-sub">Admin Panel</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="admin.html" class="nav-item">Dashboard</a>
+    <a href="manage_products.html" class="nav-item">Manage Products</a>
+    <a href="admin_pharmacies.html" class="nav-item active">Pharmacies</a>
+    <a href="admin_invoices.html" class="nav-item">Invoices</a>
+    <a href="admin_feedback.html" class="nav-item">Feedback</a>
+    <a href="admin_chat.html" class="nav-item chat-item">
+  Chat
+  <span class="chat-dot" id="chatDot"></span>
+</a>
+
+  </nav>
+
+  <button id="logoutSidebar" class="sidebar-logout">Logout</button>
+
+  
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+  <div>
+    <h1>Pharmacies</h1>
+    <p class="hint">Manage all registered pharmacies.</p>
+  </div>
+
+  <div class="topbar-right">
+    <input id="searchBox" placeholder="Search pharmacy...">
+    <button id="exportPhBtn" class="export-btn">Export PDF</button>
+  </div>
+</header>
+
+<section class="table-box">
+
+<table class="tbl">
+<thead>
+<tr>
+  <th>Pharmacy</th>
+  <th>Owner</th>
+  <th>Phone</th>
+  <th>Location</th>
+  <th>Status</th>
+  <th>Action</th>
+</tr>
+</thead>
+<tbody id="phTable"></tbody>
+</table>
+
+<p id="loading">Loading pharmacies...</p>
+
+</section>
+
+</main>
+</div>
+
+<!-- jsPDF CDN للتقرير -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="module" src="../assets/js/admin_guard.js"></script>
+
+<script type="module" src="../assets/js/admin_pharmacies.js"></script>
+</body>
+</html>

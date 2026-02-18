@@ -1,0 +1,214 @@
+body {
+  margin:0;
+  font-family:Inter, system-ui;
+  background:#f4f7fb;
+  color:#1c2a3a;
+}
+
+.layout {
+  display:flex;
+  height:100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width:240px;
+  background:linear-gradient(180deg, #064b5c, #041c25);
+  color:#e3f3f7;
+  display:flex;
+  flex-direction:column;
+  padding:16px;
+}
+
+.sidebar-brand {
+  display:flex;
+  align-items:center;
+  margin-bottom:22px;
+  gap:12px;
+}
+
+/* ✅ LOGO IMAGE */
+.logo-img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  border-radius:50%;
+  background:white;
+  padding:4px;
+  animation:logoPulse 2s infinite ease-in-out;
+}
+
+/* ✅ LOGO ANIMATION */
+@keyframes logoPulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.08)}
+  100%{transform:scale(1)}
+}
+
+.brand-name { font-weight:700; }
+.brand-sub  { font-size:11px; opacity:.7; }
+
+.sidebar-nav { flex:1; }
+
+.nav-item {
+  display:block;
+  padding:10px;
+  margin-bottom:6px;
+  border-radius:8px;
+  color:#c9dde4;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.nav-item:hover { background:rgba(255,255,255,.08); }
+
+.nav-item.active {
+  background:linear-gradient(90deg,#00bcd4,#21c4a9);
+  color:white;
+}
+
+.sidebar-logout {
+  border:none;
+  padding:10px;
+  border-radius:10px;
+  background:rgba(255,255,255,.08);
+  color:white;
+  cursor:pointer;
+}
+
+.sidebar-footer {
+  font-size:11px;
+  opacity:.6;
+  margin-top:12px;
+  text-align:center;
+}
+
+/* MAIN */
+.main {
+  flex:1;
+  padding:22px;
+  overflow:auto;
+}
+
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.topbar h1 { margin:0; }
+
+.hint { font-size:12px; color:#6c7a89; }
+
+.topbar-right{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.topbar-right input {
+  padding:8px 10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  width:220px;
+}
+
+/* زر التصدير */
+.export-btn{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid #bae6fd;
+  background: #00bcd4;
+  color:#f4f7fb;
+  font-size:13px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* TABLE */
+.table-box {
+  background:white;
+  border-radius:16px;
+  padding:18px;
+  box-shadow:0 8px 20px rgba(15,23,42,.05);
+}
+
+.tbl {
+  width:100%;
+  border-collapse:collapse;
+}
+
+.tbl th, .tbl td {
+  padding:10px;
+  border-bottom:1px solid #eaeef2;
+  text-align:left;
+}
+
+.tbl th { background:#f9fbff; }
+
+.badge.ok {
+  background:#d4f5df;
+  color:#0a7c3a;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+.badge.bad {
+  background:#ffe1e1;
+  color:#b91c1c;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:12px;
+}
+
+/* أزرار Block / Unblock */
+.action {
+  padding:6px 12px;
+  border:none;
+  border-radius:8px;
+  background:#00bcd4;
+  color:white;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600;
+}
+
+.action.block { background:#e53935; }
+.action.unblock { background:#2e7d32; }
+
+#loading {
+  text-align:center;
+  margin-top:12px;
+}
+/* Chat notification dot */
+.chat-item {
+  position: relative;
+}
+
+.chat-dot {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  width: 9px;
+  height: 9px;
+  background: #ff3b3b;
+  border-radius: 50%;
+  display: none;
+  box-shadow: 0 0 0 rgba(255,59,59,.7);
+  animation: pulseChat 1.8s infinite;
+}
+
+/* Pulse animation */
+@keyframes pulseChat {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255,59,59,.6);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(255,59,59,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255,59,59,0);
+  }
+}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pharmacy"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Verify your email"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#083A44"
+            android:layout_marginTop="32dp"/>
+
+        <TextView
+            android:id="@+id/tvEmailLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We sent a 6-digit code to your email"
+            android:textAlignment="center"
+            android:textColor="#455A64"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:id="@+id/etOtp"
+            android:layout_width="180dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:background="@drawable/et_bg_selector"
+            android:inputType="number"
+            android:hint="123456"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/btnConfirmOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_login_selector"
+            android:text="Confirm"
+            android:textColor="#FFFFFF"
+            android:textAllCaps="false"
+            android:textSize="18sp"/>
+
+        <Button
+            android:id="@+id/btnResendOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resend code"
+            android:textColor="#00796B"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

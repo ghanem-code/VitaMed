@@ -1,0 +1,188 @@
+/* ====== RESET ====== */
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui;
+}
+
+body {
+  margin: 0;
+  background: #f3f6fb;
+  color: #121826;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  width: 250px;
+  background: linear-gradient(180deg, #064b5c, #041c25);
+  color: #dceef2;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: white;
+  padding: 4px;
+  margin-right: 10px;
+  animation: logoPulse 2s infinite ease-in-out;
+}
+
+@keyframes logoPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.brand-name { font-weight: 700; }
+.brand-sub  { font-size: 11px; opacity: .7; }
+
+.sidebar-nav { flex: 1; }
+
+.nav-item {
+  display: block;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #a9cfd8;
+  transition: .2s;
+}
+
+.nav-item:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.nav-item.active {
+  background: linear-gradient(90deg,#00bcd4,#21c4a9);
+  color: #fff;
+}
+
+.sidebar-logout {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.10);
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar-footer {
+  font-size: 11px;
+  opacity: .6;
+  margin-top: 12px;
+  text-align: center;
+}
+
+/* ====== MAIN ====== */
+.main {
+  flex: 1;
+  padding: 25px;
+  overflow: auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.topbar h1 {
+  margin: 0;
+}
+
+/* زر التصدير PDF */
+.btn-export {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: #00bcd4;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+
+/* ====== CARDS LIST ====== */
+.cards-box {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.invoice-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+
+.inv-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* STATUS BADGES */
+.badge {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+}
+
+.status-completed { background:#d4f5df; color:#0a7c3a; }
+.status-returned  { background:#ffe1e1; color:#b91c1c; }
+.status-pending   { background:#fff3cd; color:#856404; }
+.status-canceled  { background:#ccc;     color:#444; }
+
+/* ITEMS */
+.items {
+  margin-top: 10px;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ddd;
+  padding: 6px 0;
+}
+
+/* ACTION BUTTONS */
+.actions {
+  margin-top: 12px;
+}
+
+.actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.actions .complete { background:#00bcd4; color:white; }
+.actions .return   { background:#e53935; color:white; }
+.actions .delete   { background:#444;    color:white; }
+.actions .export-one {
+  background:#0097a7;
+  color:white;
+}
+.actions .export-one:hover{
+  opacity:.9;
+}

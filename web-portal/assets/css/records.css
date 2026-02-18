@@ -1,0 +1,291 @@
+/* ================= GLOBAL ================= */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:"Inter",system-ui;
+}
+body{
+  background:linear-gradient(135deg,#f5f9fc,#eef3f7);
+  color:#1b2a3a;
+}
+
+/* ================= LAYOUT ================= */
+.layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* ============ نفس Sidebar ============ */
+.sidebar{
+  width:260px;
+  background:linear-gradient(180deg,#062a35,#041920);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  color:#dbf3fa;
+  box-shadow:6px 0 18px rgba(0,0,0,.15);
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0
+}
+.sidebar-brand{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  margin-bottom:30px
+}
+.sidebar-logo{width:42px;height:42px;object-fit:contain}
+.brand-name{font-size:18px;font-weight:700}
+.brand-sub{font-size:12px;opacity:.7}
+
+.sidebar-nav{flex:1}
+.nav-item{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:12px 14px;
+  border-radius:14px;
+  font-size:14px;
+  text-decoration:none;
+  color:#cde5ee;
+  margin-bottom:8px;
+  transition:.25s
+}
+.nav-dot{width:7px;height:7px;border-radius:50%;border:1px solid rgba(255,255,255,.4)}
+.nav-item:hover{background:rgba(255,255,255,.08);transform:translateX(5px)}
+.nav-item.active{
+  background:linear-gradient(90deg,#00d4ff,#21d2b2);
+  color:white;
+  box-shadow:0 6px 18px rgba(0,212,255,.45)
+}
+.nav-item.active .nav-dot{background:white;border-color:white}
+
+.sidebar-logout{
+  background:rgba(255,255,255,.1);
+  border:none;
+  border-radius:14px;
+  padding:12px;
+  color:white;
+  cursor:pointer;
+}
+.sidebar-footer{font-size:11px;opacity:.6;margin-top:12px}
+
+/* ================= MAIN ================= */
+.main{
+  margin-left:260px;
+  flex:1;
+  padding:30px;
+  display:flex;
+  flex-direction:column;
+  gap:12px
+}
+.title{
+  font-size:30px;
+  font-weight:800;
+}
+.subtitle{
+  font-size:14px;
+  color:#7a8899;
+}
+
+/* ================= RECORD BOX ================= */
+.records-box{
+  margin-top:18px;
+  background:white;
+  border-radius:20px;
+  padding:18px;
+  box-shadow:0 12px 30px rgba(0,0,0,.06);
+  max-width:900px;
+}
+
+/* ================= LOADING ================= */
+.loading{
+  font-size:14px;
+  color:#6b8192;
+}
+
+/* ================= RECORD CARD ================= */
+.record-item{
+  background:linear-gradient(135deg,#ffffff,#f7fbff);
+  border-radius:16px;
+  border:1px solid #ecf1f5;
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+  padding:18px;
+  margin-bottom:12px;
+  cursor:pointer;
+  transition:.2s;
+  position:relative;
+  overflow:hidden
+}
+.record-item::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg,transparent,rgba(0,212,255,.15),transparent);
+  opacity:0;
+  transition:.3s
+}
+.record-item:hover::before{opacity:1}
+.record-item:hover{
+  transform:translateY(-4px);
+  box-shadow:0 16px 40px rgba(0,0,0,.12);
+}
+
+/* ================= HEADER ================= */
+.record-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:10px;
+}
+.r-id{
+  font-size:16px;
+  font-weight:700
+}
+.r-date{
+  font-size:12px;
+  color:#7a8899;
+  margin-top:2px
+}
+.r-right{text-align:right}
+.r-total{
+  font-size:17px;
+  font-weight:800;
+  color:#009688
+}
+
+/* ================= STATUS ================= */
+.r-status{
+  margin-top:6px;
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:11px;
+  text-transform:capitalize;
+}
+.r-status-completed{
+  background:#e7f6ef;
+  color:#0a8754
+}
+.r-status-returned{
+  background:#fdeaea;
+  color:#b71c1c
+}
+.r-status-partially_returned{
+  background:#fff4e5;
+  color:#e65100
+}
+
+/* ================= ITEM LINES ================= */
+.record-lines{
+  margin-top:10px;
+  border-top:1px dashed #ddd;
+  padding-top:10px;
+}
+.record-line{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  font-size:13px;
+  padding:4px 0
+}
+.rl-name{font-weight:500}
+.rl-qty{color:#6b7280}
+.rl-price{font-weight:600;color:#00acc1;text-align:right}
+
+.no-lines{
+  font-size:12px;
+  color:#aaa;
+  margin-top:6px
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .main{margin-left:0}
+  .sidebar{
+    position:relative;
+    width:100%;
+    flex-direction:row
+  }
+  .records-box{max-width:100%}
+}
+/* ================= RESPONSIVE ================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+
+  .sidebar{
+    position:relative;
+    width:100%;
+    height:auto;
+    flex-direction:row;
+    align-items:center;
+  }
+
+  .sidebar-nav{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+  }
+
+  .sidebar-logout,
+  .sidebar-footer{
+    display:none;
+  }
+
+  .main{
+    margin-left:0;
+    padding:20px;
+  }
+
+  .cart-panel{
+    width:100%;
+    right:-100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .layout{
+    flex-direction:column;
+  }
+
+  .title{
+    font-size:24px;
+  }
+
+  .subtitle{
+    font-size:14px;
+  }
+
+  .products-table{
+    min-width:700px;
+  }
+
+  .cart-btn{
+    width:100%;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .products-table{
+    min-width:600px;
+  }
+
+  .qty-input{
+    width:60px;
+  }
+
+  .add-btn{
+    font-size:13px;
+    padding:6px 10px;
+  }
+
+  .cart-header{
+    font-size:18px;
+  }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VitaMed – Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  
+</head>
+<body>
+
+<div class="particles"></div>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/images/logo_vitamed.png" class="logo-img" alt="VitaMed Logo">
+      <div>
+        <div class="brand-name">VitaMed</div>
+        <div class="brand-sub">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="admin.html" class="active">Dashboard</a>
+      <a href="manage_products.html">Manage Products</a>
+      <a href="admin_pharmacies.html">Pharmacies</a>
+      <a href="admin_invoices.html">Invoices</a>
+      <a href="admin_feedback.html">Feedback</a>
+      <a href="admin_chat.html">Chat</a>
+    </nav>
+
+    <button id="logoutSidebar" class="logout">Logout</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <h1>Admin Dashboard</h1>
+        <p>Pharma overview, safety monitoring, and control center</p>
+      </div>
+
+      <div class="top-actions">
+        <span class="pill live">Live</span>
+        <span class="pill rate">USD Rate: <b>89,500</b></span>
+      </div>
+    </header>
+
+    <!-- KPI STATS -->
+    <section class="stats">
+      <div class="stat-box low-stock-card">
+        <h3>Low Stock</h3>
+        <span id="lowStockCount">0</span>
+        <small>Products need refill</small>
+      </div>
+
+      <div class="stat-box">
+        <h3>Total Pharmacies</h3>
+        <span id="pharmacyCount">0</span>
+        <small id="activeBlocked">0 / 0</small>
+      </div>
+
+      <div class="stat-box">
+        <h3>Total Invoices</h3>
+        <span id="invoiceCount">0</span>
+        <small>All statuses</small>
+      </div>
+
+      <div class="stat-box">
+        <h3>Total Returns</h3>
+        <span id="returnCount">0</span>
+        <small>Returned / Partial</small>
+      </div>
+
+      <div class="stat-box">
+        <h3>Total Sales (LBP)</h3>
+        <span id="totalSalesLBP">0</span>
+        <small>Completed only</small>
+      </div>
+
+      <div class="stat-box">
+        <h3>Total Sales (USD)</h3>
+        <span id="totalSalesUSD">$0</span>
+        <small>Converted</small>
+      </div>
+    </section>
+
+    <!-- PHARMA PANELS -->
+    <section class="panels">
+
+      <!-- Drug Safety Monitor -->
+      <div class="panel panel-safety">
+        <div class="panel-head">
+          <div>
+            <h2>Drug Safety Monitor</h2>
+            <p>Risks, refills, and operational alerts</p>
+          </div>
+          <span class="badge badge-danger" id="riskBadge">LOW RISK</span>
+        </div>
+
+        <div class="safety-grid">
+          <div class="mini">
+            <div class="mini-title">Low-stock items</div>
+            <div class="mini-value danger" id="sLowStock">0</div>
+            <div class="mini-sub">Threshold ≤ 10</div>
+          </div>
+
+          <div class="mini">
+            <div class="mini-title">Return flags</div>
+            <div class="mini-value warn" id="sReturns">0</div>
+            <div class="mini-sub">Returned / Partial</div>
+          </div>
+
+          <div class="mini">
+            <div class="mini-title">Blocked pharmacies</div>
+            <div class="mini-value" id="sBlocked">0</div>
+            <div class="mini-sub">Compliance action needed</div>
+          </div>
+
+          <div class="mini">
+            <div class="mini-title">System status</div>
+            <div class="mini-value ok" id="sStatus">OK</div>
+            <div class="mini-sub">Realtime monitoring</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compliance -->
+      <div class="panel panel-compliance">
+        <div class="panel-head">
+          <div>
+            <h2>Compliance & Accounts</h2>
+            <p>Licensing, access, and policy control</p>
+          </div>
+          <span class="badge badge-ok">COMPLIANT</span>
+        </div>
+
+        <div class="compliance-list">
+          <div class="row">
+            <span>Active pharmacies</span>
+            <b id="cActive">0</b>
+          </div>
+          <div class="row">
+            <span>Blocked pharmacies</span>
+            <b id="cBlocked">0</b>
+          </div>
+          <div class="row">
+            <span>Pending review</span>
+            <b id="cPending">0</b>
+          </div>
+
+          <div class="progress-wrap">
+            <div class="progress-label">
+              <span>Compliance score</span>
+              <b id="cScore">0%</b>
+            </div>
+            <div class="progress">
+              <div class="bar" id="cBar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smart Insights -->
+      <div class="panel panel-insights">
+        <div class="panel-head">
+          <div>
+            <h2>Smart Insights</h2>
+            <p>Auto-generated guidance for decision making</p>
+          </div>
+          <span class="badge badge-info">INSIGHTS</span>
+        </div>
+
+        <ul class="insights" id="insightsList">
+          <li>Loading insights...</li>
+        </ul>
+      </div>
+
+      <!-- Top Medicines -->
+      <div class="panel panel-top">
+        <div class="panel-head">
+          <div>
+            <h2>Most Distributed Medicines</h2>
+            <p>Top items from completed invoices</p>
+          </div>
+          <span class="badge badge-brand">TOP 5</span>
+        </div>
+
+        <div class="top-list" id="topMeds">
+          <div class="top-empty">No data yet</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="quick">
+      <div class="quick-head">
+        <h2>Quick Actions</h2>
+        <p>Fast navigation for operations</p>
+      </div>
+
+      <div class="quick-grid">
+        <a class="qcard" href="manage_products.html">
+          <div class="qicon">💊</div>
+          <div>
+            <b>Manage Products</b>
+            <small>Update stock, prices, details</small>
+          </div>
+        </a>
+
+        <a class="qcard" href="admin_pharmacies.html">
+          <div class="qicon">🏥</div>
+          <div>
+            <b>Pharmacy Accounts</b>
+            <small>Block/unblock, review activity</small>
+          </div>
+        </a>
+
+        <a class="qcard" href="admin_invoices.html">
+          <div class="qicon">🧾</div>
+          <div>
+            <b>Invoices Center</b>
+            <small>Complete, return, export PDF</small>
+          </div>
+        </a>
+
+        <a class="qcard" href="admin_feedback.html">
+          <div class="qicon">💬</div>
+          <div>
+            <b>Feedback</b>
+            <small>Monitor complaints & requests</small>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+<script type="module" src="../assets/js/admin_guard.js"></script>
+
+<script type="module" src="../assets/js/admin_dashboard.js"></script>
+</body>
+</html>

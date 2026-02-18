@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Order – VitaMed</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+    <link rel="stylesheet" href="../assets/css/order.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/images/logo_vitamed.png" class="sidebar-logo">
+            <div class="brand-text">
+                <span class="brand-name">VitaMed</span>
+                <span class="brand-sub">Pharmacy Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="customer.html" class="nav-item"><span class="nav-dot"></span>Dashboard</a>
+            <a href="order.html" class="nav-item active"><span class="nav-dot"></span>Place Order</a>
+            <a href="pricelist.html" class="nav-item"><span class="nav-dot"></span>Price List</a>
+            <a href="records.html" class="nav-item"><span class="nav-dot"></span>My Records</a>
+            <a href="returns.html" class="nav-item"><span class="nav-dot"></span>Return Requests</a>
+            <a href="settings.html" class="nav-item"><span class="nav-dot"></span>Settings</a>
+        </nav>
+
+        <button class="sidebar-logout" id="logoutSidebar">Logout</button>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <h1 class="title">Place New Order</h1>
+        <p class="subtitle">Select products and submit your pharmacy order easily.</p>
+
+        <input id="searchBox" type="text" class="search"
+               placeholder="Search products by name or brand...">
+
+        <div class="table-wrapper">
+            <table class="products-table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Brand</th>
+                    <th>Dosage</th>
+                    <th>Price (LBP)</th>
+                    <th>Stock</th>
+                    <th>Qty</th>
+                    <th>Add</th>
+                </tr>
+                </thead>
+                <tbody id="productList"></tbody>
+            </table>
+        </div>
+
+        <!-- ✅ FLOATING CART BUTTON -->
+        <button id="openCart" class="cart-btn">
+            View Cart (<span id="cartCount">0</span>)
+        </button>
+
+    </main>
+
+    <!-- CART PANEL -->
+    <div id="cartPanel" class="cart-panel">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span id="closeCart" class="close">✕</span>
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
+
+        <div class="cart-footer">
+            <h3>Total: <span id="totalPrice">0</span> LBP</h3>
+            <button id="placeOrderBtn" class="submit-btn">Place Order</button>
+        </div>
+    </div>
+
+</div>
+
+<script type="module" src="../assets/js/guard_customer.js"></script>
+<script type="module" src="../assets/js/order.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Records – VitaMed</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+
+    <link rel="stylesheet" href="../assets/css/records.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR نفس تبع customer.html -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/images/logo_vitamed.png" class="sidebar-logo">
+            <div class="brand-text">
+                <span class="brand-name">VitaMed</span>
+                <span class="brand-sub">Pharmacy Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <a href="customer.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="order.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Place Order</span>
+            </a>
+
+            <a href="pricelist.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Price List</span>
+            </a>
+
+            <a href="records.html" class="nav-item active">
+                <span class="nav-dot"></span>
+                <span>My Records</span>
+            </a>
+
+            <a href="returns.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Return Requests</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <button class="sidebar-logout" id="logoutSidebar">Logout</button>
+
+        <div class="sidebar-footer">
+            <p>© VitaMed</p>
+            <p class="muted">For healthcare professionals</p>
+        </div>
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+  
+    <main class="main">
+
+        <h1 class="title">My Records</h1>
+        <p class="subtitle">View all your placed orders and invoices.</p>
+
+        <div id="recordsContainer" class="records-box">
+            <p id="recordsLoading" class="loading">Loading orders...</p>
+            <div id="ordersList"></div>
+        </div>
+
+    </main>
+
+</div>
+
+<!-- JS -->
+ <script type="module" src="../assets/js/guard_customer.js"></script>
+<script type="module" src="../assets/js/records.js"></script>
+
+<script>
+    document.getElementById("logoutSidebar").onclick = () => {
+        localStorage.clear();
+        window.location.href = "../login.html";
+    };
+</script>
+
+</body>
+</html>

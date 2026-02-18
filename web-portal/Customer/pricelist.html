@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Price List – VitaMed</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+    <link rel="stylesheet" href="../assets/css/order.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/images/logo_vitamed.png" class="sidebar-logo">
+            <div class="brand-text">
+                <span class="brand-name">VitaMed</span>
+                <span class="brand-sub">Pharmacy Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="customer.html" class="nav-item"><span class="nav-dot"></span>Dashboard</a>
+            <a href="order.html" class="nav-item"><span class="nav-dot"></span>Place Order</a>
+            <a href="pricelist.html" class="nav-item active"><span class="nav-dot"></span>Price List</a>
+            <a href="records.html" class="nav-item"><span class="nav-dot"></span>My Records</a>
+            <a href="returns.html" class="nav-item"><span class="nav-dot"></span>Return Requests</a>
+            <a href="settings.html" class="nav-item"><span class="nav-dot"></span>Settings</a>
+        </nav>
+
+        <button class="sidebar-logout" id="logoutSidebar">Logout</button>
+
+        <div class="sidebar-footer">
+            <p>© VitaMed</p>
+            <p class="muted">For healthcare professionals</p>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <h1 class="title">Price List</h1>
+        <p class="subtitle">View all available products and their updated prices.</p>
+
+        <input type="text" id="searchBox" class="search"
+               placeholder="Search by product name or brand...">
+
+        <table class="products-table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Brand</th> <!-- ✅ BRAND -->
+                <th>Dosage</th>
+                <th>Price (LBP)</th>
+                <th>Availability</th>
+            </tr>
+            </thead>
+
+            <tbody id="productList"></tbody>
+        </table>
+
+    </main>
+
+</div>
+<script type="module" src="../assets/js/guard_customer.js"></script>
+<script type="module" src="../assets/js/pricelist.js"></script>
+<script>
+    document.getElementById("logoutSidebar").onclick = () => {
+        localStorage.clear();
+        window.location.href = "../login.html";
+    };
+</script>
+
+</body>
+</html>

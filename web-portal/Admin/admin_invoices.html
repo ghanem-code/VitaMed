@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VitaMed – Admin Invoices</title>
+<link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+  <link rel="stylesheet" href="../assets/css/admin_invoices.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- jsPDF (لازم لزر Export PDF) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/images/logo_vitamed.png" class="logo-img" alt="VitaMed Logo">
+      <div>
+        <div class="brand-name">VitaMed</div>
+        <div class="brand-sub">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="admin.html" class="nav-item">Dashboard</a>
+      <a href="manage_products.html" class="nav-item">Manage Products</a>
+      <a href="admin_pharmacies.html" class="nav-item">Pharmacies</a>
+      <a class="nav-item active">Invoices</a>
+      <a href="admin_feedback.html" class="nav-item">Feedback</a>
+      <a href="admin_chat.html" class="nav-item chat-item">
+  Chat
+  <span class="chat-dot" id="chatDot"></span>
+</a>
+
+    </nav>
+
+    <button id="logoutSidebar" class="sidebar-logout">Logout</button>
+
+    
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="topbar">
+      <h1>All Invoices</h1>
+      <button id="exportInvoices" class="btn-export">Export PDF</button>
+    </div>
+
+    <div id="invoiceContainer" class="cards-box">
+      <p id="loading">Loading...</p>
+    </div>
+
+  </main>
+</div>
+<script type="module" src="../assets/js/admin_guard.js"></script>
+
+<script type="module" src="../assets/js/admin_invoices.js"></script>
+</body>
+</html>

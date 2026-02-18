@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Return Requests – VitaMed</title>
+    <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+
+    <!-- SAME FONT -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+
+    <!-- MAIN CUSTOMER STYLES (SIDEBAR + LAYOUT) -->
+    
+
+    <!-- RETURN PAGE EXTRA DESIGN -->
+    <link rel="stylesheet" href="../assets/css/return.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- 🔵 SAME SIDEBAR FROM customer.html -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="../assets/images/logo_vitamed.png" class="sidebar-logo">
+            <div class="brand-text">
+                <span class="brand-name">VitaMed</span>
+                <span class="brand-sub">Pharmacy Portal</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="customer.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="order.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Place Order</span>
+            </a>
+
+            <a href="pricelist.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Price List</span>
+            </a>
+
+            <a href="records.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>My Records</span>
+            </a>
+
+            <a href="returns.html" class="nav-item active">
+                <span class="nav-dot"></span>
+                <span>Return Requests</span>
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                <span class="nav-dot"></span>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <button class="sidebar-logout" id="logoutSidebar">Logout</button>
+
+        <div class="sidebar-footer">
+            <p>© VitaMed</p>
+            <p class="muted">For healthcare professionals</p>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <h1 class="title">Return Requests</h1>
+        <p class="subtitle">Review your invoices and return items or cancel entire invoices.</p>
+
+        <div class="records-box" id="returnContainer">
+            <p id="loading" class="loading">Loading invoices...</p>
+            <div id="invoiceList"></div>
+        </div>
+
+    </main>
+
+</div>
+<!-- ✅ RETURN MODAL -->
+<div class="modal-overlay" id="returnModalOverlay">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="returnModalTitle">
+
+    <div class="modal-header">
+      <h2 id="returnModalTitle">Return Item</h2>
+      <button class="modal-close" id="closeReturnModalBtn">&times;</button>
+    </div>
+
+    <div class="modal-body">
+      <p class="modal-desc" id="modalItemName">Medicine Name</p>
+
+      <div class="modal-row">
+        <label class="modal-label">Purchased Qty</label>
+        <span class="modal-value" id="modalPurchasedQty">0</span>
+      </div>
+
+      <div class="modal-row">
+        <label class="modal-label">Return Qty</label>
+        <input type="number" class="modal-input" id="modalReturnQty" min="1" value="1">
+      </div>
+
+      <p class="modal-hint" id="modalHintText"></p>
+    </div>
+
+    <div class="modal-actions">
+      <button class="modal-btn cancel" id="cancelReturnModalBtn">Cancel</button>
+      <button class="modal-btn confirm" id="confirmReturnModalBtn">Confirm Return</button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- JS TO LOAD RETURNS -->
+ <script type="module" src="../assets/js/guard_customer.js"></script>
+<script type="module" src="../assets/js/returns.js"></script>
+
+<script>
+    document.getElementById("logoutSidebar").onclick = () => {
+        localStorage.clear();
+        window.location.href = "../login.html";
+    };
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BODY BACKGROUND ================= */
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", system-ui;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at top left, #14ffe9, #0097a7, #003c47);
+    overflow: hidden;
+}
+
+/* ================= FLOATING MEDICINE EMOJIS ================= */
+.meds {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none; /* 🔴 مهم */
+}
+
+.meds span {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0.6;
+    animation: floatMeds linear infinite;
+    pointer-events: none; /* 🔴 مهم */
+}
+
+.meds span:nth-child(1) { left: 10%; animation-duration: 14s; }
+.meds span:nth-child(2) { left: 20%; animation-duration: 18s; font-size: 18px; }
+.meds span:nth-child(3) { left: 35%; animation-duration: 12s; }
+.meds span:nth-child(4) { left: 50%; animation-duration: 20s; font-size: 20px; }
+.meds span:nth-child(5) { left: 65%; animation-duration: 16s; }
+.meds span:nth-child(6) { left: 80%; animation-duration: 22s; }
+.meds span:nth-child(7) { left: 90%; animation-duration: 14s; }
+
+@keyframes floatMeds {
+    from { top: 110%; transform: rotate(0deg); }
+    to   { top: -10%; transform: rotate(360deg); }
+}
+
+/* ================= GLASS CARD ================= */
+.card {
+    position: relative;      /* 🔴 مهم */
+    z-index: 10;             /* 🔴 فوق كل شيء */
+    width: 95%;
+    max-width: 420px;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.15);
+    border-radius: 22px;
+    padding: 35px 30px;
+    box-shadow: 0 0 40px rgba(0,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.25);
+    animation: slideUp 0.7s ease;
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.header h1 {
+    font-size: 36px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 12px rgba(0,255,255,0.7);
+}
+
+.logo {
+    width: 48px;
+    animation: pulse 2s infinite;
+}
+
+/* ================= SUBTITLE ================= */
+.subtitle {
+    text-align: center;
+    color: #c9f9ff;
+    margin: 15px 0 30px;
+    font-size: 15px;
+}
+
+/* ================= FORM ================= */
+.form label {
+    display: block;
+    color: #ccf6ff;
+    margin-top: 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form input {
+    width: 100%;
+    height: 46px;
+    border-radius: 12px;
+    border: none;
+    padding: 0 15px;
+    margin-top: 6px;
+    font-size: 15px;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+.form input:focus {
+    background: rgba(255,255,255,0.3);
+    box-shadow: 0 0 12px cyan;
+}
+
+/* ================= FORGOT PASSWORD LINK ================= */
+.forgot {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.forgot a {
+    color: #7ff3ff;
+    font-size: 13px;
+    text-decoration: none;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.forgot a:hover {
+    color: cyan;
+    text-shadow: 0 0 8px cyan;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+
+/* ================= LOGIN BUTTON ================= */
+.btn {
+    position: relative;        /* 🔴 أساسي */
+    overflow: hidden;          /* 🔴 أساسي */
+    display: block;
+    margin: 22px auto 0;
+    padding: 14px 38px;
+    border-radius: 18px;
+    border: none;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00ffe7, #00a2ff);
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(0,255,255,0.6);
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #00ffff, #00ffaa);
+    opacity: 0;
+    transition: 0.3s;
+    pointer-events: none;      /* 🔴 يمنع سرقة الضغط */
+}
+
+.btn:hover::before {
+    opacity: 0.4;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px cyan;
+}
+
+/* ================= SIGNUP LINK ================= */
+.signup-link {
+    text-align: center;
+    margin-top: 18px;
+    color: #b9f4ff;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: cyan;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+/* ===== Password Eye Toggle (ONLY password box) ===== */
+.pass-wrap{
+  position: relative;
+  width: 100%;
+  margin-top: 6px; /* نفس المسافة اللي كانت على input */
+}
+
+.pass-wrap input{
+  margin-top: 0;              /* لأن wrap اخد مكان margin */
+  padding-right: 50px;        /* مساحة للعين */
+}
+
+.toggle-pass{
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.16);
+  color: white;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .2s;
+}
+
+.toggle-pass:hover{
+  background: rgba(255,255,255,0.26);
+  box-shadow: 0 0 10px rgba(0,255,255,.35);
+}
+
+.toggle-pass:active{
+  transform: translateY(-50%) scale(0.96);
+}
+/* Hide default Edge/IE password reveal button */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}

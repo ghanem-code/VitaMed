@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Invoice Details – Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+  <link rel="stylesheet" href="../assets/css/admin_record_details.css">
+  
+</head>
+
+<body>
+<div class="layout">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">VitaMed <small>Admin</small></div>
+    <nav>
+      <a href="admin.html">Dashboard</a>
+      <a href="manage_products.html">Manage Products</a>
+      <a href="admin_pharmacies.html">Pharmacies</a>
+      <a class="active" href="admin_invoices.html">Invoices</a>
+      <a href="admin_chat.html">Chat</a>
+    </nav>
+    <button id="logoutSidebar">Logout</button>
+  </aside>
+
+  <main class="main">
+
+    <h1 id="title">Invoice Details</h1>
+
+    <div class="info">
+      <div><strong>Pharmacy:</strong> <span id="pharmacy"></span></div>
+      <div><strong>Date:</strong> <span id="date"></span></div>
+      <div><strong>Status:</strong> <span id="status"></span></div>
+      <div><strong>Total:</strong> <span id="total"></span></div>
+    </div>
+
+    <h2>Items</h2>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Qty</th>
+          <th>Unit Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody id="itemsTable"></tbody>
+    </table>
+
+    <div class="admin-actions">
+      <button class="btn danger" onclick="markReturned()">Mark as Returned</button>
+      <button class="btn" onclick="goBack()">Back</button>
+    </div>
+
+  </main>
+
+</div>
+<script type="module" src="../assets/js/admin_guard.js"></script>
+
+<script type="module" src="../assets/js/admin_record_details.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="#00BBD4"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"/>
+
+    <TextView
+        android:id="@+id/tvInvoiceTotal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total: 0 LBP"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:background="#EEEEEE" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:layout_width="match_parent"
+        android:layout_height="621dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tvStatusNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="✅ Completed — return disabled"
+        android:textColor="#0A7C3A"
+        android:textStyle="bold"
+        android:padding="12dp"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/btnSubmitReturn"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/btn_login_selector"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="Cancel Entire Invoice"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

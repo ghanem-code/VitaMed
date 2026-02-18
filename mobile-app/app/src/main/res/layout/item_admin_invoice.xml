@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="4dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Pharmacy and total -->
+        <TextView
+            android:id="@+id/tvPharmacyName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pharmacy"
+            android:textStyle="bold"
+            android:textColor="#263238"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvInvoiceDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_marginTop="4dp"
+            android:textColor="#607D8B"/>
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Total: 0 LBP"
+            android:layout_marginTop="6dp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20"/>
+
+        <!-- Items -->
+        <TextView
+            android:id="@+id/tvItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Items..."
+            android:layout_marginTop="8dp"
+            android:textColor="#455A64"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

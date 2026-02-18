@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reset Password – VitaMed</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+
+<body>
+
+  
+    <div class="meds">
+        <span>💊</span>
+        <span>🩺</span>
+        <span>💉</span>
+        <span>🧬</span>
+        <span>💊</span>
+        <span>🩹</span>
+        <span>⚕️</span>
+    </div>
+
+    <div class="card">
+
+      
+        <div class="header">
+            <h1>VitaMed</h1>
+            <img src="assets/images/logo_vitamed.png" class="logo" alt="VitaMed Logo">
+        </div>
+
+        <p class="subtitle">Reset your password</p>
+
+       
+        <p class="login-text" style="margin-top: 0; margin-bottom: 18px;">
+            Enter the email linked to your account and we will send you
+            a secure reset link.
+        </p>
+
+        <form class="form" onsubmit="sendReset(event)">
+            <label>Email address</label>
+            <input id="resetEmail" type="email" placeholder="example@gmail.com" required>
+
+            <button type="submit" class="btn">
+                Send reset link
+            </button>
+        </form>
+
+        <p class="signup-link" style="margin-top: 18px;">
+            Remembered your password?
+            <a href="login.html">Back to login</a>
+        </p>
+    </div>
+
+    <script type="module" src="assets/js/reset.js"></script>
+</body>
+</html>

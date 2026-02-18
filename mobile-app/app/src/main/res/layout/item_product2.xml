@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <!-- ICON / BRAND IMAGE -->
+        <ImageView
+            android:id="@+id/ivBrand"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_pill"
+            android:contentDescription="@string/app_name"/>
+
+        <!-- PRODUCT NAME -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivBrand"
+            android:layout_alignTop="@id/ivBrand"
+            android:text="PRODUCT NAME"
+            android:textColor="#3A3A3A"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:maxLines="2"/>
+
+        <!-- AVAILABILITY -->
+        <LinearLayout
+            android:id="@+id/availabilityWrap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/tvName">
+
+            <View
+                android:id="@+id/dotAvailability"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/dot_red"
+                android:layout_marginEnd="6dp"/>
+
+            <TextView
+                android:id="@+id/tvAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Out of stock"
+                android:textSize="14sp"
+                android:textColor="#D32F2F"/>
+        </LinearLayout>
+
+        <!-- BRAND -->
+        <TextView
+            android:id="@+id/tvBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_toEndOf="@id/ivBrand"
+            android:layout_marginTop="4dp"
+            android:text="Pfizer"
+            android:textSize="13sp"
+            android:textColor="#607D8B"/>
+
+        <!-- DOSAGE -->
+        <TextView
+            android:id="@+id/tvDosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvBrand"
+            android:layout_toEndOf="@id/ivBrand"
+            android:text="500mg"
+            android:textSize="12sp"
+            android:textColor="#78909C"/>
+
+        <!-- PRICE -->
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDosage"
+            android:layout_toEndOf="@id/ivBrand"
+            android:layout_marginTop="8dp"
+            android:text="100,000 LBP"
+            android:textColor="#1693D1"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

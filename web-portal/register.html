@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VitaMed – Register</title>
+     <link rel="icon" type="image/png" href="assets/images/logo_vitamed.png">
+    <link rel="stylesheet" href="assets/css/register.css">
+</head>
+
+<body>
+
+<div class="meds">
+    <span>💊</span>
+    <span>🩺</span>
+    <span>💉</span>
+    <span>🧬</span>
+    <span>💊</span>
+    <span>🩹</span>
+    <span>⚕️</span>
+</div>
+
+<div class="card">
+
+    <div class="header">
+        <h1>VitaMed</h1>
+        <img src="assets/images/logo_vitamed.png" class="logo" alt="VitaMed Logo">
+    </div>
+
+    <p class="subtitle">Create your pharmacy account</p>
+
+    <form class="form" onsubmit="registerUser(event)">
+
+        <label>Username</label>
+        <input type="text" id="username" placeholder="example" required>
+
+        <label>Email address</label>
+        <input type="email" id="email" placeholder="example@example.com" required>
+
+        <label>Password</label>
+        <div class="pass-wrap">
+            <input id="password" type="password" placeholder="********" required>
+            <button type="button" class="toggle-pass" id="togglePass">👁️</button>
+        </div>
+
+        <label>Confirm password</label>
+        <div class="pass-wrap">
+            <input id="confirmPassword" type="password" placeholder="********" required>
+            <button type="button" class="toggle-pass" id="togglePass2">👁️</button>
+        </div>
+
+        <label>Mobile number</label>
+        <input type="tel" id="phone" placeholder="+961 71 810 323" required>
+
+        <label>Pharmacy name</label>
+        <input type="text" id="pharmacy" placeholder="Name Pharmacy" required>
+
+        <!-- ✅ NEW LOCATION -->
+        <label>Pharmacy location</label>
+        <input
+            type="text"
+            id="location"
+            placeholder="City, Area (e.g. Beirut – Hamra)"
+            required
+        >
+
+        <button type="submit" class="btn">Create account</button>
+
+        <p class="login-text">
+            Already have an account?
+            <a href="login.html">Login</a>
+        </p>
+    </form>
+
+</div>
+
+<script type="module" src="assets/js/firebase.js"></script>
+<script type="module" src="assets/js/register.js"></script>
+
+</body>
+</html>

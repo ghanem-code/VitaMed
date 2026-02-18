@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>VitaMed – Manage Products</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+  <link rel="stylesheet" href="../assets/css/admin_products.css">
+  
+</head>
+
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <img src="../assets/images/logo_vitamed.png" class="logo-img">
+      <div>
+        <div class="brand-name">VitaMed</div>
+        <div class="brand-sub">Admin Panel</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="admin.html">Dashboard</a>
+      <a class="active" href="manage_products.html">Manage Products</a>
+      <a href="admin_pharmacies.html">Pharmacies</a>
+      <a href="admin_invoices.html">Invoices</a>
+      <a href="admin_feedback.html">Feedback</a>
+      <a href="admin_chat.html" class="nav-item chat-item">
+        Chat <span class="chat-dot" id="chatDot"></span>
+      </a>
+    </nav>
+
+    <button id="logoutSidebar" class="logout">Logout</button>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <header class="topbar">
+      <div>
+        <h1>Product Manager</h1>
+        <p>Control your full product catalog.</p>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="exportBtn" class="btn-secondary">Export PDF</button>
+        <button id="addBtn" class="btn-primary">+ New Product</button>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <input type="text" id="searchBox" placeholder="Search by name or brand…">
+      <select id="filterStock">
+        <option value="all">All</option>
+        <option value="low">Low stock</option>
+        <option value="out">Out of stock</option>
+      </select>
+    </section>
+
+    <section class="table-box">
+      <table>
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Brand</th>
+          <th>Dosage</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="productTable"></tbody>
+      </table>
+      <p id="loading">Loading products…</p>
+    </section>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <h2 id="modalTitle">Add Product</h2>
+
+    <input id="pName" placeholder="Product Name">
+    <input id="pBrand" placeholder="Brand">
+    <input id="pDose" placeholder="Dosage (e.g 500mg)">
+    <input id="pPrice" type="number" placeholder="Price">
+    <input id="pStock" type="number" placeholder="Stock">
+
+    <div class="modal-actions">
+      <button onclick="saveProduct()" class="btn-primary">Save</button>
+      <button onclick="closeModal()" class="btn-ghost">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script type="module" src="../assets/js/admin_guard.js"></script>
+
+<script type="module" src="../assets/js/admin_products.js"></script>
+</body>
+</html>

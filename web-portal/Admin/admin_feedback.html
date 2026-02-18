@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VitaMed – Feedback</title>
+<link rel="icon" type="image/png" href="../assets/images/logo_vitamed.png">
+<link rel="stylesheet" href="../assets/css/admin_feedback.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- PDF LIB -->
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+  <div class="sidebar-brand">
+    <img src="../assets/images/logo_vitamed.png" class="logo-img">
+    <div>
+      <div class="brand-name">VitaMed</div>
+      <div class="brand-sub">Admin Panel</div>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a href="admin.html" class="nav-item">Dashboard</a>
+    <a href="manage_products.html" class="nav-item">Manage Products</a>
+    <a href="admin_pharmacies.html" class="nav-item">Pharmacies</a>
+    <a href="admin_invoices.html" class="nav-item">Invoices</a>
+    <a class="nav-item active">Feedback</a>
+    <a href="admin_chat.html" class="nav-item chat-item">
+  Chat
+  <span class="chat-dot" id="chatDot"></span>
+</a>
+
+  </nav>
+
+  <button id="logoutSidebar" class="sidebar-logout">Logout</button>
+
+  <div class="sidebar-footer">© VitaMed</div>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<header class="topbar">
+  <div>
+    <h1>Customer Feedback</h1>
+    <p class="hint">Pharmacies ratings & reviews</p>
+  </div>
+
+  <div class="tools">
+    <input id="searchBox" placeholder="Search pharmacy...">
+    <select id="rateFilter">
+      <option value="all">All ratings</option>
+      <option value="5">★★★★★</option>
+      <option value="4">★★★★</option>
+      <option value="3">★★★</option>
+      <option value="2">★★</option>
+      <option value="1">★</option>
+    </select>
+
+    <!-- ✅ PDF -->
+    <button id="exportPDF" class="pdf-btn">Export PDF</button>
+
+  </div>
+</header>
+
+<div class="counter">
+  Total Feedback: <b id="count">0</b>
+</div>
+
+<div id="feedbackList" class="feedback-box">
+  <p id="loading">Loading feedback...</p>
+</div>
+
+</main>
+</div>
+<script type="module" src="../assets/js/admin_guard.js"></script>
+
+<script type="module" src="../assets/js/admin_feedback.js"></script>
+</body>
+</html>
